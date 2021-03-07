@@ -37,9 +37,15 @@ export default {
         this.$store.dispatch('replaceInSelected', {variant, index})
       } else {
         this.$store.dispatch('addToSelected', option)
-      }    
-      
+      }     
     }
+  },
+  watch: {
+    optionsArray() {
+      if (!this.optionsArray.length) {
+        this.variantSelected = ''
+      }  
+    } 
   }
 }
 </script>
